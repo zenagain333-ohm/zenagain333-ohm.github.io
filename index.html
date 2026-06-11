@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAGA Rentals | Tables, Chairs, Booths & Event Setups</title>
+  <meta name="description" content="Tables, chairs, booth/canopy rentals, event setup, and future SAGA event planning experiences for Orange County and Los Angeles." />
+
+  <style>
+    :root{
+      --bg:#080b10;
+      --card:#111923;
+      --text:#eef7ff;
+      --muted:#aebcd0;
+      --soft:#d6e6f7;
+      --accent:#24f0c7;
+      --accent2:#7aa7ff;
+      --gold:#ffd27d;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 18px 45px rgba(0,0,0,.38);
+      --radius:22px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(36,240,199,.20), transparent 65%),
+        radial-gradient(850px 500px at 85% 0%, rgba(122,167,255,.18), transparent 58%),
+        radial-gradient(700px 460px at 50% 108%, rgba(255,210,125,.10), transparent 60%),
+        var(--bg);
+      line-height:1.5;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:26px 18px 70px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 22px;
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(12px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo{
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      background:linear-gradient(135deg, rgba(36,240,199,1), rgba(122,167,255,.9));
+      box-shadow:0 0 0 1px rgba(255,255,255,.18), 0 0 32px rgba(36,240,199,.25);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo:after{
+      content:"";
+      position:absolute;
+      inset:9px;
+      border:2px solid rgba(8,11,16,.65);
+      border-radius:999px;
+      box-shadow:0 0 0 7px rgba(255,255,255,.13);
+    }
+
+    .brand b{
+      font-size:18px;
+      letter-spacing:.3px;
+    }
+
+    .brand small{
+      display:block;
+      color:var(--muted);
+      margin-top:1px;
+    }
+
+    .navlinks{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .navlinks a{
+      color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .navlinks a:hover{
+      color:var(--text);
+      border-color:rgba(36,240,199,.38);
+    }
+
+    @media(max-width:760px){
+      .nav{
+        position:relative;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+      .navlinks{
+        justify-content:flex-start;
+      }
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    @media(max-width:900px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-main{
+      padding:30px;
+      position:relative;
+      min-height:460px;
+    }
+
+    .hero-main:before{
+      content:"";
+      position:absolute;
+      right:-90px;
+      bottom:-110px;
+      width:330px;
+      height:330px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(36,240,199,.18), transparent 62%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--accent);
+      border:1px solid rgba(36,240,199,.25);
+      background:rgba(36,240,199,.08);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0;
+      max-width:780px;
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:.98;
+      letter-spacing:-1.6px;
+    }
+
+    .sub{
+      max-width:66ch;
+      color:var(--muted);
+      margin-top:18px;
+      font-size:17px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:13px 15px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .1s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(36,240,199,.45);
+      background:rgba(255,255,255,.07);
+    }
+
+    .btn-primary{
+      color:#071016;
+      background:linear-gradient(135deg, rgba(36,240,199,1), rgba(122,167,255,.92));
+      border-color:rgba(255,255,255,.22);
+      box-shadow:0 15px 35px rgba(36,240,199,.15);
+    }
+
+    .btn-gold{
+      color:#171006;
+      background:linear-gradient(135deg, #ffd27d, #ffefbd);
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:24px;
+    }
+
+    @media(max-width:800px){
+      .hero-points{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .mini{
+      padding:16px;
+      background:rgba(255,255,255,.035);
+      border:1px solid var(--line);
+      border-radius:18px;
+    }
+
+    .mini b{
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .mini span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .hero-side{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .quickbox{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .quickbox h2{
+      margin:0 0 10px;
+      font-size:19px;
+    }
+
+    .quickbox ul{
+      margin:0;
+      padding-left:19px;
+      color:var(--muted);
+    }
+
+    .quickbox li{
+      margin:6px 0;
+    }
+
+    .tagrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:var(--muted);
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .section{
+      margin-top:32px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin:0 2px 13px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:clamp(24px,3vw,34px);
+      letter-spacing:-.7px;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:55ch;
+      color:var(--muted);
+      font-size:14px;
+      text-align:right;
+    }
+
+    @media(max-width:760px){
+      .section-title{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+      .section-title p{
+        text-align:left;
+      }
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .grid4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    @media(max-width:900px){
+      .grid2,.grid3,.grid4{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .item{
+      padding:18px;
+      position:relative;
+    }
+
+    .item h3{
+      margin:0 0 6px;
+      font-size:19px;
+    }
+
+    .item p{
+      color:var(--muted);
+      margin:8px 0 0;
+      font-size:14px;
+    }
+
+    .price{
+      color:var(--accent);
+      font-weight:900;
+      font-size:22px;
+      margin-top:8px;
+    }
+
+    .note{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:10px;
+    }
+
+    .package{
+      padding:20px;
+      min-height:230px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .package h3{
+      margin:0;
+      font-size:21px;
+    }
+
+    .package .includes{
+      color:var(--soft);
+      margin-top:10px;
+    }
+
+    .package small{
+      color:var(--muted);
+      display:block;
+      margin-top:10px;
+    }
+
+    .steps .item{
+      min-height:170px;
+    }
+
+    .stepnum{
+      width:34px;
+      height:34px;
+      border-radius:13px;
+      background:rgba(36,240,199,.12);
+      border:1px solid rgba(36,240,199,.25);
+      color:var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .banner{
+      padding:25px;
+      background:linear-gradient(135deg, rgba(36,240,199,.12), rgba(122,167,255,.08)), rgba(255,255,255,.025);
+    }
+
+    .banner h2{
+      margin:0;
+      font-size:clamp(25px,3vw,38px);
+    }
+
+    .banner p{
+      max-width:76ch;
+      color:var(--muted);
+      margin:12px 0 0;
+    }
+
+    .experience{
+      position:relative;
+      padding:24px;
+      background:radial-gradient(600px 260px at 70% 0%, rgba(255,210,125,.12), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+
+    .experience h3{
+      margin:0;
+      font-size:24px;
+    }
+
+    .experience .kicker{
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+
+    .labyrinth{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    @media(max-width:900px){
+      .labyrinth{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .labyrinth-art{
+      min-height:280px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at center, rgba(36,240,199,.20), transparent 18%),
+        repeating-radial-gradient(circle at center, rgba(255,255,255,.16) 0 2px, transparent 2px 18px),
+        linear-gradient(135deg, rgba(36,240,199,.08), rgba(122,167,255,.05));
+      position:relative;
+      overflow:hidden;
+    }
+
+    .labyrinth-art:before{
+      content:"THE HELIX LABYRINTH";
+      position:absolute;
+      inset:auto 18px 18px 18px;
+      color:rgba(238,247,255,.82);
+      font-weight:900;
+      letter-spacing:1.2px;
+      font-size:13px;
+    }
+
+    .labyrinth-art:after{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      border:2px solid rgba(36,240,199,.45);
+      top:calc(50% - 60px);
+      left:calc(50% - 60px);
+      box-shadow:0 0 45px rgba(36,240,199,.18);
+    }
+
+    .formlinks .item{
+      min-height:240px;
+    }
+
+    .footer{
+      margin-top:38px;
+      padding:22px 0 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a{
+      color:var(--soft);
+    }
+
+    .tiny{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .market{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background:rgba(0,0,0,.25);
+      border:1px dashed rgba(36,240,199,.32);
+      color:var(--soft);
+      border-radius:18px;
+      padding:16px;
+      overflow:auto;
+      font-size:13px;
+      margin-top:12px;
+      white-space:pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="SAGA Rentals home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>
+          <b>SAGA Rentals</b>
+          <small>Tables • Chairs • Booths • Event Setup</small>
+        </span>
+      </a>
+
+      <div class="navlinks">
+        <a href="#pricing">Inventory</a>
+        <a href="#packages">Packages</a>
+        <a href="#booking">Book</a>
+        <a href="#planning">Planning</a>
+        <a href="#survey">Survey</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="card hero-main">
+          <div class="eyebrow">OC + LA EVENT RENTALS</div>
+          <h1>Tables, chairs & booths. Delivered with calm, clean magic.</h1>
+
+          <p class="sub">
+            SAGA Rentals helps you build a real gathering without the chaos goblin.
+            Start with sturdy tables, chairs, and vendor booths. Add delivery, setup,
+            planning support, and soon: immersive SAGA experiences for parties, pop-ups,
+            schools, fundraisers, and community events.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://docs.google.com/forms/" target="_blank" rel="noopener">
+              Request a Quote
+            </a>
+            <a class="btn" href="https://calendly.com/" target="_blank" rel="noopener">
+              Schedule a Quote Call
+            </a>
+            <a class="btn" href="sms:+13108070462">
+              Text Fastest Quote
+            </a>
+            <a class="btn" href="#packages">
+              View Packages
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <div class="mini">
+              <b>Easy rentals</b>
+              <span>Tables, chairs, booths, canopies, and event basics.</span>
+            </div>
+            <div class="mini">
+              <b>Setup options</b>
+              <span>Delivery, layout help, setup, and breakdown available.</span>
+            </div>
+            <div class="mini">
+              <b>Built to scale</b>
+              <span>From backyard parties to vendor rows and full event planning.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="quickbox">
+            <h2>Fast Quote Checklist</h2>
+            <ul>
+              <li>Event date and city</li>
+              <li>Guest count</li>
+              <li>Tables and chairs needed</li>
+              <li>Booth/canopy needs</li>
+              <li>Delivery and setup preference</li>
+            </ul>
+          </div>
+
+          <div class="quickbox">
+            <h2>Contact</h2>
+            <p>
+              <b>Text/Call:</b>
+              <a href="tel:+13108070462">(310) 807-0462</a><br>
+              <b>Email:</b>
+              <a href="mailto:zenagain333@gmail.com">zenagain333@gmail.com</a>
+            </p>
+
+            <div class="tagrow">
+              <span class="tag">Orange County</span>
+              <span class="tag">Los Angeles</span>
+              <span class="tag">Delivery available</span>
+              <span class="tag">Setup add-on</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="section-title">
+          <h2>Inventory + Starter Pricing</h2>
+          <p>Final pricing depends on date, location, quantity, delivery, stairs, setup needs, and pickup window.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card item">
+            <h3>6ft Banquet Tables</h3>
+            <div class="price">Ask for quote</div>
+            <p>Great for food, gifts, displays, check-in, kids tables, and vendor setups.</p>
+            <div class="tagrow">
+              <span class="tag">Seats 6–8</span>
+              <span class="tag">Indoor/outdoor</span>
+            </div>
+          </div>
+
+          <div class="card item">
+            <h3>Folding Chairs</h3>
+            <div class="price">Ask for quote</div>
+            <p>Clean, sturdy seating for parties, ceremonies, workshops, and pop-ups.</p>
+            <div class="tagrow">
+              <span class="tag">Bulk available</span>
+              <span class="tag">Easy setup</span>
+            </div>
+          </div>
+
+          <div class="card item">
+            <h3>10x10 Booth Canopies</h3>
+            <div class="price">Ask for quote</div>
+            <p>Vendor booths, shade stations, market rows, info tables, or family events.</p>
+            <div class="tagrow">
+              <span class="tag">Weights required</span>
+              <span class="tag">Sidewalls optional</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="note">
+          Delivery, setup, stairs, late-night pickup, long carries, and complex venues may affect final quote.
+        </p>
+      </section>
+
+      <section class="section" id="packages">
+        <div class="section-title">
+          <h2>Simple Packages</h2>
+          <p>People love not having to do chair math. These bundles make booking feel easy.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card package">
+            <div>
+              <h3>Backyard Basic</h3>
+              <p class="includes">3 tables + 20 chairs</p>
+              <small>Best for birthdays, family dinners, small backyard gatherings.</small>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+13108070462?body=Hi%20SAGA%20Rentals%2C%20I%27m%20interested%20in%20the%20Backyard%20Basic%20package.">Text to Request</a>
+            </div>
+          </div>
+
+          <div class="card package">
+            <div>
+              <h3>Family Feast</h3>
+              <p class="includes">6 tables + 40 chairs</p>
+              <small>Best for graduations, memorials, reunions, and community meals.</small>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+13108070462?body=Hi%20SAGA%20Rentals%2C%20I%27m%20interested%20in%20the%20Family%20Feast%20package.">Text to Request</a>
+            </div>
+          </div>
+
+          <div class="card package">
+            <div>
+              <h3>Vendor Pop-Up</h3>
+              <p class="includes">10x10 canopy + 1 table + 2 chairs</p>
+              <small>Best for markets, booths, fundraisers, info tables, and pop-ups.</small>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+13108070462?body=Hi%20SAGA%20Rentals%2C%20I%27m%20interested%20in%20the%20Vendor%20Pop-Up%20package.">Text to Request</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:14px;">
+          <div class="card package">
+            <div>
+              <h3>Market Row</h3>
+              <p class="includes">4 canopies + 4 tables + 8 chairs</p>
+              <small>For small vendor rows, school events, community fairs, and pop-up markets.</small>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+13108070462?body=Hi%20SAGA%20Rentals%2C%20I%27m%20interested%20in%20the%20Market%20Row%20package.">Text to Request</a>
+            </div>
+          </div>
+
+          <div class="card package">
+            <div>
+              <h3>Gathering Glow</h3>
+              <p class="includes">Custom table/chair count + setup support</p>
+              <small>For parties that need layout help, flow, and a smoother setup plan.</small>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="sms:+13108070462?body=Hi%20SAGA%20Rentals%2C%20I%27m%20interested%20in%20a%20custom%20Gathering%20Glow%20setup.">Text to Request</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Clean process, no confusion swamp.</p>
+        </div>
+
+        <div class="grid4 steps">
+          <div class="card item">
+            <div class="stepnum">1</div>
+            <h3>Request</h3>
+            <p>Send date, city, guest count, inventory needs, and setup preferences.</p>
+          </div>
+
+          <div class="card item">
+            <div class="stepnum">2</div>
+            <h3>Confirm</h3>
+            <p>We confirm availability, delivery details, and send a clear quote.</p>
+          </div>
+
+          <div class="card item">
+            <div class="stepnum">3</div>
+            <h3>Reserve</h3>
+            <p>A deposit reserves your date. Final details are confirmed before event day.</p>
+          </div>
+
+          <div class="card item">
+            <div class="stepnum">4</div>
+            <h3>Deliver</h3>
+            <p>We deliver, set up if selected, and return for pickup or breakdown.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="booking">
+        <div class="section-title">
+          <h2>Booking + Scheduling</h2>
+          <p>Use text for fastest pricing. Add your Google Form and Calendly links here when ready.</p>
+        </div>
+
+        <div class="grid3 formlinks">
+          <div class="card item">
+            <h3>Rental Quote Form</h3>
+            <p>Best for tables, chairs, booths, delivery, and simple packages. Form link coming soon.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="mailto:zenagain333@gmail.com?subject=SAGA%20Rental%20Quote%20Request&body=Hi%20SAGA%20Rentals%2C%0A%0AEvent%20date%3A%0ACity%2Faddress%3A%0AGuest%20count%3A%0ATables%20needed%3A%0AChairs%20needed%3A%0ABooth%2Fcanopy%20needed%3A%0ADelivery%20needed%3F%0ASetup%20needed%3F%0A%0AThank%20you!">
+                Email Quote Request
+              </a>
+            </div>
+          </div>
+
+          <div class="card item">
+            <h3>Schedule a Quote Call</h3>
+            <p>Book a short call if you are unsure about quantities, delivery windows, or event flow.</p>
+            <div class="cta-row">
+              <a class="btn" href="mailto:zenagain333@gmail.com?subject=Schedule%20a%20SAGA%20Rentals%20Quote%20Call">
+                Request a Call
+              </a>
+            </div>
+          </div>
+
+          <div class="card item">
+            <h3>Text Fastest Quote</h3>
+            <p>For Marketplace, Craigslist, and OfferUp customers who just need a quick answer.</p>
+            <div class="cta-row">
+              <a class="btn" href="sms:+13108070462">Text Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="planning">
+        <div class="card banner">
+          <div class="eyebrow">EVENT PLANNING ROADMAP</div>
+          <h2>Starting with rentals. Scaling into full event support.</h2>
+          <p>
+            SAGA can grow from tables and chairs into layout help, vendor coordination,
+            themed experiences, day-of setup, and full event planning. Tell us the dream,
+            the budget, and the stress point. We will help shape the plan.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-gold" href="mailto:zenagain333@gmail.com?subject=SAGA%20Event%20Planning%20Intake&body=Hi%20SAGA%2C%0A%0AEvent%20type%3A%0AEvent%20date%3A%0ALocation%3A%0AGuest%20count%3A%0ABudget%20range%3A%0APlanning%20help%20needed%3A%0AEvent%20vibe%3A%0ABiggest%20stress%20point%3A%0ADream%20outcome%3A">
+              Event Planning Intake
+            </a>
+          </div>
+        </div>
+
+        <div class="grid3" style="margin-top:14px;">
+          <div class="card item">
+            <h3>Layout + Flow</h3>
+            <p>Guest seating, vendor rows, food areas, shade, pathways, and smoother movement.</p>
+          </div>
+
+          <div class="card item">
+            <h3>Setup Crew</h3>
+            <p>Hands-on help for staging, placing rentals, signs, guest areas, and cleanup plans.</p>
+          </div>
+
+          <div class="card item">
+            <h3>Theme + Experience</h3>
+            <p>From clean backyard charm to SAGA’s mythic midway, labyrinth, and carnival add-ons.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experiences">
+        <div class="section-title">
+          <h2>Coming Soon: SAGA Experiences</h2>
+          <p>The rental line can become a signature event world. Casual to deep, simple to legendary.</p>
+        </div>
+
+        <div class="labyrinth">
+          <div class="labyrinth-art card" aria-label="Decorative labyrinth graphic"></div>
+
+          <div class="card experience">
+            <div class="kicker">Future Add-On</div>
+            <h3>The Helix Carnival + Labyrinth</h3>
+            <p>
+              A portable mythic midway: carnival games, riddles, traveler passports,
+              a rope labyrinth, hidden keys, and a Vault reveal. Guests can stay casual
+              or go full quest-mode.
+            </p>
+
+            <div class="tagrow">
+              <span class="tag">Carnival stations</span>
+              <span class="tag">Riddles</span>
+              <span class="tag">Mission cards</span>
+              <span class="tag">Vault reveal</span>
+              <span class="tag">Photo moment</span>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn" href="mailto:zenagain333@gmail.com?subject=Ask%20About%20SAGA%20Experiences">
+                Ask About SAGA Experiences
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="survey">
+        <div class="section-title">
+          <h2>After Your Event</h2>
+          <p>Feedback helps us tighten the screws, polish the lanterns, and build something better every time.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card item">
+            <h3>Post-Event Survey</h3>
+            <p>
+              Tell us how delivery, setup, communication, and equipment worked for you.
+              Your feedback helps us improve and scale.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="mailto:zenagain333@gmail.com?subject=SAGA%20Post-Event%20Feedback&body=Hi%20SAGA%20Rentals%2C%0A%0AEvent%20date%3A%0ARating%201-5%3A%0AWas%20delivery%20on%20time%3F%0AWas%20equipment%20clean%3F%0AWas%20communication%20clear%3F%0AWhat%20could%20be%20improved%3F%0ATestimonial%20if%20you%27d%20like%20to%20share%3A">
+                Send Feedback
+              </a>
+            </div>
+          </div>
+
+          <div class="card item">
+            <h3>Reviews + Photos</h3>
+            <p>
+              Loved the setup? Send a review or photo. With your permission,
+              we may feature it in our gallery or marketplace listings.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="mailto:zenagain333@gmail.com?subject=SAGA%20Rentals%20Review%20%2F%20Photos">
+                Email Review/Photos
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Marketplace Copy</h2>
+          <p>Copy this into Craigslist, OfferUp, or Facebook Marketplace once your site is live.</p>
+        </div>
+
+        <div class="card item">
+          <h3>Quick Listing Blurb</h3>
+          <div class="market">Tables, chairs & 10x10 booth/canopy rentals for OC + LA events.
+
+Great for birthdays, graduations, family parties, pop-ups, vendor booths, school events, community gatherings, and fundraisers.
+
+Available:
+• 6ft banquet tables
+• Folding chairs
+• 10x10 booth/canopies
+• Delivery available
+• Setup/breakdown add-on
+• Packages for 20, 40, vendor pop-ups, and custom events
+
+Fast quote:
+https://zenagain333-ohm.github.io
+
+Text for fastest response: (310) 807-0462
+Email: zenagain333@gmail.com</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        © <span id="year"></span> SAGA Rentals. Gather well.
+      </div>
+      <div>
+        <a href="#pricing">Inventory</a> •
+        <a href="#booking">Book</a> •
+        <a href="#planning">Planning</a> •
+        <a href="#survey">Survey</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
